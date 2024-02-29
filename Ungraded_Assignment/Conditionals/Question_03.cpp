@@ -6,6 +6,8 @@ const int N = 1e9+7;
 void solve(){
     char ch;
     int a, b; cin>>a>>b>>ch;
+    int big = max(a,b);
+    int smol = min(a,b);
     switch (ch)
     {
     case '+':
@@ -18,7 +20,7 @@ void solve(){
         cout<<a*b<<"\n";
         break;
     case '/':
-        cout<<a/b<<"\n";
+        cout<<big/smol<<"\n";
         break;
     default:
         cout<<"Wrong character"<<"\n";

@@ -17,7 +17,7 @@ int main(){
     for(int i=0; i<len; ++i){
         li.GetNextItem(var);
         cout<<var<<" ";
-    }li.ResetList(); //Reset List is must to protect from memory leak.
+    }li.ResetList(); //To ensure the list prints from start again.
 
   
 }

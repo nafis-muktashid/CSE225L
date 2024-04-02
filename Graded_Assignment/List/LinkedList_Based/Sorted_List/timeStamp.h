@@ -3,17 +3,17 @@
 
 class timeStamp {
 	private:
-		int hour;
-		int minute;
 		int second;
+		int minute;
+		int hour;
 
 	public:
 		timeStamp();
 		timeStamp(int, int, int);
-		bool operator<(timeStamp);
-		bool operator>(timeStamp);
 		bool operator==(timeStamp);
-		friend std::ostream& operator<<(std::ostream&, timeStamp&);
+		bool operator>(timeStamp);
+		bool operator<(timeStamp);
+		void printTimeStamp();
 };
 
 #endif // TIMESTAMP_H_INCLUDED

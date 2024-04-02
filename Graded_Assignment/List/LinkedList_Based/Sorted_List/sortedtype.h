@@ -2,8 +2,8 @@
 #define SORTEDTYPE_H_INCLUDED
 
 template <class T>
-class SortedType{
-    struct NodeType{
+class SortedType {
+    struct NodeType {
         T info;
         NodeType* next;
     };
@@ -14,7 +14,7 @@ public:
     bool IsFull();
     int LengthIs();
     void MakeEmpty();
-    void RetrieveItem(T& , bool&);
+    void RetrieveItem(T&, bool&);
     void InsertItem(T);
     void DeleteItem(T);
     void ResetList();

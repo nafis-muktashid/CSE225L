@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 #include "timeStamp.h"
 using namespace std;
 
@@ -7,14 +8,14 @@ timeStamp::timeStamp() {
 }
 
 
-timeStamp::timeStamp(int h, int m, int s) {
-	hour = h;
-	minute = m;
+timeStamp::timeStamp(int s, int m, int h) {
 	second = s;
+	minute = m;
+	hour = h;
 }
 
-bool timeStamp::operator<(timeStamp t) {
-	if ((hour < t.hour) || ((hour == t.hour)) && (minute < t.minute) || ((hour == t.hour) && (minute == t.minute) && (second < t.second))) {
+bool timeStamp::operator==(timeStamp t) {
+	if ((hour == t.hour) && (minute == t.minute) && (second == t.second)) {
 		return true;
 	}
 	else {
@@ -31,8 +32,8 @@ bool timeStamp::operator>(timeStamp t) {
 	}
 }
 
-bool timeStamp::operator==(timeStamp t) {
-	if ((hour == t.hour) && (minute == t.minute) && (second == t.second)) {
+bool timeStamp::operator<(timeStamp t) {
+	if ((hour < t.hour) || ((hour == t.hour)) && (minute < t.minute) || ((hour == t.hour) && (minute == t.minute) && (second < t.second))) {
 		return true;
 	}
 	else {
@@ -40,7 +41,7 @@ bool timeStamp::operator==(timeStamp t) {
 	}
 }
 
-ostream& operator<<(ostream& os, timeStamp& t) {
-	os << t.second << ":" << t.minute << ":" << t.hour;
-	return os;
+void timeStamp::printTimeStamp()
+{
+	cout << setfill('0') << setw(2) << second << ":"<< setw(2) << minute << ":"<< setw(2) << hour;
 }

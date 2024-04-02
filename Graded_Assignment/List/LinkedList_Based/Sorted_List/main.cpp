@@ -1,17 +1,9 @@
 #include <iostream>
+#include <iomanip>
 #include "sortedtype.h"
 #include "sortedtype.cpp"
-#include "timeStamp.cpp"
+#include "timeStamp.h"
 using namespace std;
-
-template <class T>
-void printList(SortedType<T> list) {
-	T item;
-	for (int i = 0; i < list.LengthIs(); i++) {
-		list.GetNextItem(item);
-		cout << item << " ";
-	}
-}
 
 int main() {
 	SortedType<timeStamp> tsList;
@@ -31,5 +23,11 @@ int main() {
 	timeStamp temp(25, 36, 17);
 	tsList.DeleteItem(temp);
 
-	printList(tsList);
+	for (int i = 0; i < tsList.LengthIs(); i++) {
+		timeStamp k;
+		tsList.GetNextItem(k);
+		k.printTimeStamp();
+		cout << "\n";
+	}
+
 }
